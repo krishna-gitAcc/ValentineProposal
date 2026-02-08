@@ -462,20 +462,54 @@ body {
 
 /* ===== Responsive Design ===== */
 @media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
     .card {
-        padding: 40px 30px;
-        margin: 20px;
-        border-radius: 24px;
+        padding: 30px 20px;
+        margin: 10px;
+        border-radius: 20px;
+        width: 95%;
     }
 
     .title {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     .title-line.highlight {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
+    .subtitle {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    /* Welcome Screen Mobile */
+    .heart-lock {
+        font-size: 60px;
+    }
+
+    .distance-line {
+        font-size: 0.9rem;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .flight-path {
+        transform: rotate(90deg);
+        letter-spacing: 2px;
+        margin: 10px 0;
+    }
+
+    /* Quiz Screen Mobile */
+    .btn-option {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    /* Proposal Screen Mobile */
     .buttons {
         flex-direction: column;
         gap: 15px;
@@ -483,20 +517,63 @@ body {
 
     .btn {
         width: 100%;
-        padding: 18px 30px;
+        padding: 15px 20px;
+        font-size: 1rem;
     }
 
     .envelope {
         width: 100px;
         height: 75px;
+        margin-bottom: 20px;
     }
 
+    /* Date Planner Mobile */
     .success-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .success-emoji {
-        font-size: 60px;
+        font-size: 50px;
+    }
+
+    .date-options {
+        gap: 10px;
+    }
+
+    .date-option {
+        width: calc(50% - 10px);
+        /* 2 per row */
+        padding: 15px;
+    }
+
+    .option-icon {
+        font-size: 30px;
+    }
+
+    .option-label {
+        font-size: 0.8rem;
+    }
+
+    /* Ticket Mobile */
+    .ticket {
+        padding: 15px;
+        margin-top: 15px;
+    }
+
+    .ticket-header {
+        padding: 10px;
+    }
+
+    .ticket-title {
+        font-size: 0.8rem;
+    }
+
+    .ticket-value {
+        font-size: 0.9rem;
+    }
+
+    .highlight-text {
+        font-size: 1.2rem;
     }
 }
 
@@ -828,4 +905,115 @@ body {
     color: var(--pink-600);
     font-family: var(--font-script);
     font-size: 1.4rem;
+}
+
+/* ===== Mobile Responsiveness (Max Width 480px) ===== */
+@media screen and (max-width: 480px) {
+    .card {
+        padding: 30px 20px;
+        /* Reduced vertical and horizontal padding */
+        width: 90%;
+        /* Ensure card doesn't touch edges */
+        max-width: 100%;
+        margin: 0 10px;
+    }
+
+    .title {
+        font-size: 2rem;
+        /* Smaller title */
+    }
+
+    .title-line.highlight {
+        font-size: 2.5rem;
+        /* Smaller highlight text */
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    /* Adjust flight path for mobile */
+    .distance-line {
+        flex-direction: column;
+        gap: 15px;
+        margin: 40px 0;
+        /* Add space for the vertical line */
+    }
+
+    .flight-path {
+        letter-spacing: -2px;
+        /* improved vertical rotation */
+        transform: rotate(90deg);
+        display: inline-block;
+        /* Ensure it doesn't take up massive width in the flow but has height */
+        white-space: nowrap;
+    }
+
+    /* Stack buttons or make them smaller */
+    .buttons {
+        gap: 15px;
+    }
+
+    .btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+        width: 100%;
+        /* Full width buttons on mobile look better */
+    }
+
+    /* Date Planner Adjustments */
+    .date-options {
+        flex-direction: column;
+        /* Stack options vertically */
+        align-items: center;
+        gap: 15px;
+    }
+
+    .date-option {
+        width: 100%;
+        /* Full width options */
+        flex-direction: row;
+        /* Icon left, text right */
+        padding: 15px 25px;
+        justify-content: flex-start;
+    }
+
+    .option-icon {
+        font-size: 30px;
+    }
+
+    .option-label {
+        font-size: 1.1rem;
+    }
+
+    /* Ticket Adjustments */
+    .ticket {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .ticket-row {
+        margin-bottom: 10px;
+    }
+
+    .ticket-value {
+        font-size: 0.9rem;
+    }
+
+    .highlight-text {
+        font-size: 1.2rem;
+    }
+
+    /* Ensure Quiz Options stack nicely */
+    .quiz-options {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .btn-option {
+        width: 100%;
+    }
 }
