@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine? 💕</title>
+    <meta name="description" content="A special question just for you...">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="hearts-container" id="heartsContainer"></div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Interface 1: Welcome Screen -->
+        <section id="screen-welcome" class="screen active">
+            <div class="card welcome-card">
+                <div class="heart-lock">✈️❤️</div>
+                <h1 class="title">A Message For <span class="highlight">Jucy</span></h1>
+                <p class="subtitle">Distance means so little when someone means so much...</p>
+                <div class="distance-line">
+                    <span class="location">Me</span>
+                    <span class="flight-path">------------✈️------------</span>
+                    <span class="location">You</span>
+                </div>
+                <button class="btn btn-yes" onclick="nextScreen(2)">Unlock Message 🗝️</button>
+            </div>
+        </section>
+
+        <!-- Interface 2: The Quiz (Chemistry Check) -->
+        <section id="screen-quiz" class="screen hidden">
+            <div class="card quiz-card">
+                <h2 class="title">First, a quick check! 🧐</h2>
+                <p class="subtitle">Who misses you the most in the entire universe?</p>
+                <div class="quiz-options">
+                    <button class="btn btn-option" onclick="wrongAnswer(this)">Justin Bieber 🎤</button>
+                    <button class="btn btn-option" onclick="wrongAnswer(this)">Your Ex (Lol) 👻</button>
+                    <button class="btn btn-yes" onclick="correctAnswer()">ME! (Krishna) 🙋‍♂️💕</button>
+                </div>
+                <p id="quiz-feedback" class="feedback-text"></p>
+            </div>
+        </section>
+
+        <!-- Interface 3: The Proposal -->
+        <section id="screen-proposal" class="screen hidden">
+            <div class="card" id="questionCard">
+                <div class="card-glow"></div>
+                <div class="envelope" id="envelope">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body">
+                        <div class="letter">
+                            <span class="heart-icon">💌</span>
+                        </div>
+                    </div>
+                </div>
+                <h1 class="title">
+                    <span class="title-line">Will You Be</span>
+                    <span class="title-line highlight">My Valentine?</span>
+                </h1>
+                <p class="subtitle">Even miles apart, my heart is always with you... 🌍💖</p>
+                <div class="buttons">
+                    <button class="btn btn-yes" id="yesBtn">
+                        <span class="btn-text">Yes! 💖</span>
+                        <span class="btn-sparkle"></span>
+                    </button>
+                    <button class="btn btn-no" id="noBtn">
+                        <span class="btn-text">No 💔</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interface 4: The Date Planner (LDR Edition) -->
+        <section id="screen-date" class="screen hidden">
+            <!-- Success Card (Hidden Initially) -->
+            <div class="card success-card" id="successCard">
+                <div class="card-glow success-glow"></div>
+                <div class="celebration-hearts" id="celebrationHearts"></div>
+                <div class="success-emoji">🥰</div>
+                <h1 class="success-title">Yay! Virtual Date Night!</h1>
+                <p class="success-message">No distance can stop us from celebrating! 💻💕</p>
+
+                <div class="date-planner">
+                    <p class="planner-title">Choose our Date Night:</p>
+                    <div class="date-options">
+                        <div class="date-option" onclick="selectDate('movie')">
+                            <span class="option-icon">🎬</span>
+                            <span class="option-label">Netflix Party</span>
+                        </div>
+                        <div class="date-option" onclick="selectDate('dinner')">
+                            <span class="option-icon">🍝</span>
+                            <span class="option-label">FaceTime Dinner</span>
+                        </div>
+                        <div class="date-option" onclick="selectDate('sleep')">
+                            <span class="option-icon">😴</span>
+                            <span class="option-label">Sleep on Call</span>
+                        </div>
+                    </div>
+                    <div id="final-ticket" class="ticket hidden">
+                        <div class="ticket-header">
+                            <span class="ticket-title">BOARDING PASS TO MY HEART ✈️</span>
+                        </div>
+                        <div class="ticket-content">
+                            <div class="ticket-row">
+                                <span class="ticket-label">PASSENGER</span>
+                                <span class="ticket-value">Jucy</span>
+                            </div>
+                            <div class="ticket-row">
+                                <span class="ticket-label">DESTINATION</span>
+                                <span class="ticket-value">Cloud Nine ☁️</span>
+                            </div>
+                            <div class="ticket-row">
+                                <span class="ticket-label">DATE ACTIVITY</span>
+                                <span class="ticket-value highlight-text" id="ticket-activity">Activity</span>
+                            </div>
+                            <div class="ticket-row">
+                                <span class="ticket-label">TIME</span>
+                                <span class="ticket-value">Forever & Always</span>
+                            </div>
+                            <div class="barcode">|||||| ||||||| |||||</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sparkle Cursor Effect -->
+    <div class="cursor-sparkle" id="cursorSparkle"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
