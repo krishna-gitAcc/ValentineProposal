@@ -909,9 +909,18 @@ body {
 
 /* ===== Mobile Responsiveness (Max Width 480px) ===== */
 @media screen and (max-width: 480px) {
+    body {
+        overflow-y: auto !important;
+        /* Allow scrolling on body */
+        height: auto !important;
+    }
+
     .container {
         padding: 0 !important;
         /* Remove container padding */
+        height: auto !important;
+        min-height: 100vh;
+        overflow-y: auto !important;
     }
 
     .card {
@@ -928,6 +937,7 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        overflow: visible !important;
     }
 
     .title {
